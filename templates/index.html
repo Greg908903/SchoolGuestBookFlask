@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Гостевая книга</title>
+  </head>
+  <body>
+     <h1>Гостевая книга</h1>
+     {% for post in posts %}
+        <hr>
+        <p><em>{{post.author}} пишет...</em></p>
+        <h2>{{post.title}}</h2>
+        <p>{{post.message}}</p>
+     {% endfor %}
+     <hr>
+     <form method="post">
+         <label for="author">Представьтесь, пожалуйста</label>
+         <input type="text" name="author" id="author"><br>
+         <label for="title">Тема</label>
+         <input type="text" name="title" id="title"><br>
+         <label for="message">Сoобщение</label><br>
+         <textarea name="message" id="message"
+         placeholder="Напишите сюда что-то"></textarea><br>
+         <input type="submit" value="Запостить">
+     </form>
+  </body>
+</html>
