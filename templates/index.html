@@ -12,14 +12,22 @@
      {% endfor %}
      <hr>
      <form method="post">
-         <label for="author">Представьтесь, пожалуйста</label>
-         <input type="text" name="author" id="author"><br>
-         <label for="title">Тема</label>
-         <input type="text" name="title" id="title"><br>
-         <label for="message">Сoобщение</label><br>
-         <textarea name="message" id="message"
-         placeholder="Напишите сюда что-то"></textarea><br>
-         <input type="submit" value="Запостить">
+         <table>
+         <tr>
+             <td><label for="author">Представьтесь, пожалуйста</label></td>
+             <td><input type="text" name="author" id="author"><br></td>
+         </tr>
+         <tr>
+             <td><label for="title">Тема</label></td>
+             <td><input type="text" name="title" id="title"><br></td>
+         </tr>
+         <tr>
+             <td><label for="message">Сoобщение</label><br></td>
+            <td><textarea name="message" id="message"
+                       placeholder="Напишите сюда что-то"></textarea><br></td>
+         </tr>
+         <tr><td><input type="submit" value="Запостить"></td></tr>
+         </table>
      </form>
   </body>
 </html>
