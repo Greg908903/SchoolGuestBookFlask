@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ошибка, пустые поля</title>
+  </head>
+  <body>
+    <h1>Вы не до конца заполнили форму!</h1>
+    <p>Вы не заполнили следующие поля:</p>
+    <ul>
+      {%  if is_empty_author == 'True' %}
+        <li>Автор</li>
+      {% endif %}
+      {% if is_empty_title == 'True' %}
+        <li>Тема</li>
+      {% endif %}
+      {% if is_empty_message == 'True' %}
+        <li>Сообщение</li>
+      {% endif %}
+    </ul>
+    <p>Пожалуйста, заполните все поля.</p>
+    <p><a href="/">Вернуться на главную страницу</a></p>
+  </body>
+</html>

@@ -19,7 +19,7 @@ def index():
         if True in parameters:
             return redirect(url_for('bad_form', is_empty_author=parameters[0],
                                     is_empty_title=parameters[1],
-                                    is_empty_message=parameters[2], count_empty=parameters.count(True)))
+                                    is_empty_message=parameters[2]))
         new_post = Post(request.form["author"],
                         request.form["title"],
                         request.form["message"])
@@ -29,8 +29,10 @@ def index():
 
 @app.route("/bad_form")
 def bad_form():
-    count_empty_fields = 0
-    return "Bruh"
+
+    return render_template("bad_form.html", is_empty_author=request.args.get("is_empty_author"),
+                           is_empty_title=request.args.get("is_empty_title"),
+                           is_empty_message=request.args.get("is_empty_message"))
 
 
 app.run(port=5757)

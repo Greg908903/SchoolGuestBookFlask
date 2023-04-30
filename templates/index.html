@@ -3,31 +3,33 @@
     <title>Гостевая книга</title>
   </head>
   <body>
-     <h1>Гостевая книга</h1>
-     {% for post in posts %}
-        <hr>
-        <p><em>{{post.author}} пишет...</em></p>
-        <h2>{{post.title}}</h2>
-        <p>{{post.message}}</p>
-     {% endfor %}
-     <hr>
-     <form method="post">
-         <table>
-         <tr>
-             <td><label for="author">Представьтесь, пожалуйста</label></td>
-             <td><input type="text" name="author" id="author"><br></td>
-         </tr>
-         <tr>
-             <td><label for="title">Тема</label></td>
-             <td><input type="text" name="title" id="title"><br></td>
-         </tr>
-         <tr>
-             <td><label for="message">Сoобщение</label><br></td>
-            <td><textarea name="message" id="message"
-                       placeholder="Напишите сюда что-то"></textarea><br></td>
-         </tr>
-         <tr><td><input type="submit" value="Запостить"></td></tr>
-         </table>
-     </form>
+    <h1>Гостевая книга</h1>
+    {% for post in posts %}
+      <hr>
+      <p><em>{{ post.author }} пишет...</em></p>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.message }}</p>
+    {% endfor %}
+    <hr>
+    <form method="post">
+      <table>
+        <tr>
+          <td><label for="author">Представьтесь, пожалуйста</label></td>
+          <td><input type="text" name="author" id="author"><br></td>
+        </tr>
+        <tr>
+          <td><label for="title">Тема</label></td>
+          <td><input type="text" name="title" id="title"><br></td>
+        </tr>
+        <tr>
+          <td><label for="message">Сoобщение</label><br></td>
+          <td><textarea name="message" id="message"
+                        placeholder="Напишите сюда что-то"></textarea><br></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Запостить"></td>
+        </tr>
+      </table>
+    </form>
   </body>
 </html>
