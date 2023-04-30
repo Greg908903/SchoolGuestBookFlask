@@ -6,7 +6,8 @@
     <h1>Гостевая книга</h1>
     {% for post in posts %}
       <hr>
-      <p><em>{{ post.author }} пишет...</em></p>
+      <p><em>{{ post.author }} {{ post.post_datetime.date() }}
+        в {{ post.post_datetime.time().isoformat(timespec="seconds") }} пишет...</em></p>
       <h2>{{ post.title }}</h2>
       <p>{{ post.message }}</p>
     {% endfor %}

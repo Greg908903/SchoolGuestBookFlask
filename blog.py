@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
 
 from Post import Post
@@ -6,8 +7,8 @@ app = Flask(__name__)
 
 FORM_NAMES = ["author", "title", "message"]
 
-posts = [Post("Вася", "Привет", "Привет всем!"),
-         Post("Петя", "Пока", "Всем пока, я пошёл!")]
+posts = [Post("Вася", "Привет", "Привет всем!", datetime.now()),
+         Post("Петя", "Пока", "Всем пока, я пошёл!", datetime.now())]
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -22,14 +23,13 @@ def index():
                                     is_empty_message=parameters[2]))
         new_post = Post(request.form["author"],
                         request.form["title"],
-                        request.form["message"])
+                        request.form["message"], datetime.now())
         posts.append(new_post)
     return render_template("index.html", posts=posts)
 
 
 @app.route("/bad_form")
 def bad_form():
-
     return render_template("bad_form.html", is_empty_author=request.args.get("is_empty_author"),
                            is_empty_title=request.args.get("is_empty_title"),
                            is_empty_message=request.args.get("is_empty_message"))
